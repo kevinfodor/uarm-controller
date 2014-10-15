@@ -1,0 +1,18 @@
+*.datasource
+*.application
+*.cache
+*.Cache
+*.config
+*.deploy
+*.dll
+*.exe
+*.manifest
+*.pdb
+*.resources
+uArm Controller.xml
+uArmController.vbproj.FileListAbsolute.txt
+/uArm_Controller.suo
+/uArm_Controller/obj/x86/Release/uArm Controller.TrustInfo.xml
+/uArm_Controller/uArmController_TemporaryKey.pfx
+/uArm_Controller/uArmController.vbproj.user
+/uArm_Controller/obj/x86/Debug/uArm Controller.TrustInfo.xml

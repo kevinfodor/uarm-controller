@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19F6BAB1-5053-43ED-BCA4-992D686184F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>uArm_Controller.My.MyApplication</StartupObject>
+    <RootNamespace>uArm_Controller</RootNamespace>
+    <AssemblyName>uArm Controller</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://code.google.com/p/uarm-controller/</SupportUrl>
+    <ErrorReportUrl>https://code.google.com/p/uarm-controller/issues/list</ErrorReportUrl>
+    <ProductName>uArm Controller</ProductName>
+    <PublisherName>Kevin Fodor</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>uArm Controller.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>uArm Controller.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5D7EABD7AE519DEC97C325BB2DEA93821C95D287</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=AMD64" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="SlimDX" />
+    <Import Include="SlimDX.DirectInput" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.Designer.vb">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Common\Axis.vb" />
+    <Compile Include="Common\AxisConfigDialog.Designer.vb">
+      <DependentUpon>AxisConfigDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AxisConfigDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Button.vb" />
+    <Compile Include="Common\ButtonConfigDialog.Designer.vb">
+      <DependentUpon>ButtonConfigDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ButtonConfigDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Bytes.vb" />
+    <Compile Include="Common\Controller.vb" />
+    <Compile Include="Common\DirectInputObjects.vb" />
+    <Compile Include="Common\InputDevice.vb" />
+    <Compile Include="Common\JoystickDialog.Designer.vb">
+      <DependentUpon>JoystickDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\JoystickDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uArmJoystickModule.vb" />
+    <Compile Include="Common\JoystickSelectionControl.Designer.vb">
+      <DependentUpon>JoystickSelectionControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\JoystickSelectionControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\POV.vb" />
+    <Compile Include="Common\POVConfigDialog.Designer.vb">
+      <DependentUpon>POVConfigDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\POVConfigDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Processing.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="Parameter.vb" />
+    <Compile Include="uArmForm.Designer.vb">
+      <DependentUpon>uArmForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uArmForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\SerialPortDialog.Designer.vb">
+      <DependentUpon>SerialPortDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SerialPortDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uArmComm.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="uArmJoystickDialog.Designer.vb">
+      <DependentUpon>uArmJoystickDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uArmJoystickDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uArmLogControl.Designer.vb">
+      <DependentUpon>uArmLogControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uArmLogControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uArmRange.vb" />
+    <Compile Include="uArmState.vb" />
+    <Compile Include="uArmStateControl.Designer.vb">
+      <DependentUpon>uArmStateControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="uArmStateControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Utilities.vb" />
+    <Compile Include="UpdateRateDialog.Designer.vb">
+      <DependentUpon>UpdateRateDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateRateDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\AxisConfigDialog.resx">
+      <DependentUpon>AxisConfigDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\ButtonConfigDialog.resx">
+      <DependentUpon>ButtonConfigDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\JoystickDialog.resx">
+      <DependentUpon>JoystickDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\JoystickSelectionControl.resx">
+      <DependentUpon>JoystickSelectionControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\SerialPortDialog.resx">
+      <DependentUpon>SerialPortDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uArmForm.resx">
+      <DependentUpon>uArmForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uArmJoystickDialog.resx">
+      <DependentUpon>uArmJoystickDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uArmLogControl.resx">
+      <DependentUpon>uArmLogControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uArmStateControl.resx">
+      <DependentUpon>uArmStateControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateRateDialog.resx">
+      <DependentUpon>UpdateRateDialog.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\AboutBox.datasource" />
+    <None Include="My Project\DataSources\Bytes.datasource" />
+    <None Include="My Project\DataSources\MainForm.datasource" />
+    <None Include="My Project\DataSources\MainForm.SafeUpdateForm.datasource" />
+    <None Include="My Project\DataSources\SerialPortDialog.datasource" />
+    <None Include="My Project\DataSources\uArm.datasource" />
+    <None Include="My Project\DataSources\uArm_Controller.My.MyApplication.datasource" />
+    <None Include="My Project\DataSources\uArm_Controller.My.MySettings.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uArm.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
