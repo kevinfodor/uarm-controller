@@ -45,6 +45,7 @@ Not all joysticks will have all these buttons (or may have more). If these butto
 
 # Keyboard #
 You can also control the uArm using your keyboard. The keyboard mapping to the uArm is as follows:
+
 |**Key**|**uArm**|
 |:------|:-------|
 |a,A|Rotation -1|
