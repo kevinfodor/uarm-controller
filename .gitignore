@@ -16,3 +16,6 @@ uArmController.vbproj.FileListAbsolute.txt
 /uArm_Controller/uArmController_TemporaryKey.pfx
 /uArm_Controller/uArmController.vbproj.user
 /uArm_Controller/obj/x86/Debug/uArm Controller.TrustInfo.xml
+/uArm_Controller.v12.suo
+/uArm_Controller/bin/Debug/SlimDX.xml
+/uArm_Controller/bin/Release/SlimDX.xml
