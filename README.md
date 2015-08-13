@@ -2,9 +2,9 @@
 # uArm Controller #
 This project is a Graphical User Interface for controlling the uArm Robotic Arm designed and produced by [uFactory](http://ufactory.cc). It was created as an alternative implementation of the uArm Mouse Controller application however with a focus on adding more intuitive joystick control along with instrumentation and data logging.
 
-  * Download latest version: [here](https://drive.google.com/file/d/0B8_Aotc206N6VDNXTDZUTDhQS28/view?usp=sharing)
+  * Download latest version: [here](https://drive.google.com/open?id=0B8_Aotc206N6b25YS0xjcDJBcHM)
   * Online manual: Coming soon!
-  * Source code: [here](https://drive.google.com/file/d/0B8_Aotc206N6S251VXI2RVpzWjA/view?usp=sharing)
+  * Source code: [here](https://drive.google.com/open?id=0B8_Aotc206N6ZWZCM0ZNWHI4VW8)
   * Issue tracker: https://code.google.com/p/uarm-controller/issues/list
 
 Note: You will also need to install the [Microsoft .NET 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=17851) framework package (which the installer will guide you to do). Also required is the [SlimDX](http://slimdx.org) framework which is available as a free download [here](http://slimdx.org/download.php). You will need to choose either .NET 4.0 for x86 or x64 version based on your machine.
