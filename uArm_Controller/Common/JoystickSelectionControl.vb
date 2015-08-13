@@ -70,29 +70,34 @@ Public Class JoystickSelectionControl
         End Get
     End Property
 
-    Private Sub JoystickDialog_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub JoystickDialog_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) _
+        Handles MyBase.Load
 
         Try
             ' Populate a list of 'Game Controller'
-            For Each device As DeviceInstance In _dInput.GetDevices(DeviceClass.GameController, DeviceEnumerationFlags.AttachedOnly)
-                ControllerComboBox.Items.Add(device.ProductName)
-                _guid_list.Add(device.ProductGuid)
-            Next
+            If _dInput IsNot Nothing Then
+                For Each device As DeviceInstance In _dInput.GetDevices( _
+                    DeviceClass.GameController, DeviceEnumerationFlags.AttachedOnly)
+                    ControllerComboBox.Items.Add(device.ProductName)
+                    _guid_list.Add(device.ProductGuid)
+                Next
 
-            ' If any were found, try to match GUID provided
-            If _guid_list.Count() > 0 Then
-                Dim index As Integer
-                index = _guid_list.FindIndex(Function(p) p = _guid)
-                If index < 0 Then ' No match found, use first one
-                    index = 0
+                ' If any were found, try to match GUID provided
+                If _guid_list.Count() > 0 Then
+                    Dim index As Integer
+                    index = _guid_list.FindIndex(Function(p) p = _guid)
+                    If index < 0 Then ' No match found, use first one
+                        index = 0
+                    End If
+                    'update properties of this control
+                    ControllerComboBox.SelectedIndex = index
+                    _guid = _guid_list(index)
+                    _device_name = ControllerComboBox.SelectedItem
+                Else
+                    MessageBox.Show("No available " & _
+                                    DeviceClass.GameController.ToString & " devices!", Me.Text)
+                    ParentForm.Close()
                 End If
-                'update properties of this control
-                ControllerComboBox.SelectedIndex = index
-                _guid = _guid_list(index)
-                _device_name = ControllerComboBox.SelectedItem
-            Else
-                MessageBox.Show("No available " & DeviceClass.GameController.ToString & " devices!", Me.Text)
-                ParentForm.Close()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, Me.Text)
@@ -107,7 +112,8 @@ Public Class JoystickSelectionControl
 
     End Sub
 
-    Private Sub ControllerComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ControllerComboBox.SelectedIndexChanged
+    Private Sub ControllerComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) _
+        Handles ControllerComboBox.SelectedIndexChanged
         _guid = _guid_list(ControllerComboBox.SelectedIndex)
         _device_name = ControllerComboBox.SelectedItem
 
@@ -220,7 +226,8 @@ Public Class JoystickSelectionControl
         _dInput.Dispose()
     End Sub
 
-    Private Sub TestButton_Click(sender As System.Object, e As System.EventArgs) Handles TestButton.Click
+    Private Sub TestButton_Click(sender As System.Object, e As System.EventArgs) _
+        Handles TestButton.Click
         If PollTimer.Enabled Then
             PollTimer.Stop()
             TestButton.Text = "Test"
@@ -232,7 +239,8 @@ Public Class JoystickSelectionControl
         End If
     End Sub
 
-    Private Sub PollTimer_Tick(sender As System.Object, e As System.EventArgs) Handles PollTimer.Tick
+    Private Sub PollTimer_Tick(sender As System.Object, e As System.EventArgs) _
+        Handles PollTimer.Tick
         Dim state As JoystickState
         state = _joystick.GetCurrentState
 

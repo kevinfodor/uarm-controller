@@ -68,12 +68,14 @@ Public Class SerialPortDialog
         InitializeComponent()
 
         'Load values provided as defaults
-        _portValue = port
-        _rateValue = rate
+        Me.PortName = port
+        Me.Rate = rate
 
     End Sub
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
+        PortName = _PortName.SelectedItem
+        Rate = CInt(_BaudRate.SelectedItem)
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
     End Sub
 
@@ -115,14 +117,6 @@ Public Class SerialPortDialog
             Me.Close()
         End Try
 
-    End Sub
-
-    Private Sub _PortName_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles _BaudRate.SelectedIndexChanged
-        PortName = _PortName.SelectedItem
-    End Sub
-
-    Private Sub _BaudRate_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles _BaudRate.SelectedIndexChanged
-        Rate = CInt(_BaudRate.SelectedItem)
     End Sub
 
 End Class
